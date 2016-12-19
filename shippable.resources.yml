@@ -1,0 +1,63 @@
+resources:
+  #NOTIFICATIONS
+      
+  - name: slack-rs
+    type: notification
+    integration: "plv2-slackcock1"
+    pointer:
+      recipients:
+        - "#pipeline-pvt"
+        - "#pipeline-public"
+        - "@shiphitchcock1"
+
+  - name: email-rs
+    type: notification
+    integration: "plv2-emailcock1"
+    pointer:
+      recipients: 
+        - "varsha@shippable.com"
+        - "shiphitchcock1@gmail.com"
+        
+#IMAGES
+        
+  - name: img1-rs
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.1"
+      
+  - name: "2img-rs"
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.2"
+      
+  - name: "redis-rs"
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "redis"
+    seed:
+      versionName: "latest"
+      
+  - name: "env-rs"
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "scriptnull/busybox"
+    seed:
+      versionName: "nodeenv"
+      
+#GITREPO:
+
+  - name: sample-script-rs
+    type: gitRepo
+    integration: "github"
+    pointer:
+      sourceName: "shiptest-rc-me/sample-script"
+      branch: "master"
+      
