@@ -8,6 +8,9 @@ jobs:
       - TASK:
         - script: ls
         - script: ./IN/sample-script-rs/gitRepo/echo.sh
+    on_start:
+      - NOTIFY: slack-rs
+      - NOTIFY: email-rs
     on_success:
       - NOTIFY: slack-rs
       - NOTIFY: email-rs
