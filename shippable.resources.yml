@@ -10,7 +10,7 @@ resources:
         - "#pipeline-public"
         - "@shiphitchcock1"
 
-    - name: email-rs
+  - name: email-rs
     type: notification
     pointer:
       method: email
