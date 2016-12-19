@@ -3,26 +3,26 @@ resources:
       
   - name: slack-rs
     type: notification
-    integration: "plv2-slackcock1"
+    integration: "slack"
     pointer:
       recipients:
         - "#pipeline-pvt"
         - "#pipeline-public"
         - "@shiphitchcock1"
 
-  - name: email-rs
+    - name: email-rs
     type: notification
-    integration: "plv2-emailcock1"
     pointer:
+      method: email
       recipients: 
         - "varsha@shippable.com"
-        - "shiphitchcock1@gmail.com"
+        - "shiptest.rc.me@gmail.com"
         
 #IMAGES
         
   - name: img1-rs
     type: image
-    integration: plv2-docker
+    integration: docker
     pointer:
       sourceName: "shippabledocker/pipelinev2"
     seed:
@@ -30,7 +30,7 @@ resources:
       
   - name: "2img-rs"
     type: image
-    integration: plv2-docker
+    integration: docker
     pointer:
       sourceName: "shippabledocker/pipelinev2"
     seed:
@@ -38,7 +38,7 @@ resources:
       
   - name: "redis-rs"
     type: image
-    integration: plv2-docker
+    integration: docker
     pointer:
       sourceName: "redis"
     seed:
@@ -46,7 +46,7 @@ resources:
       
   - name: "env-rs"
     type: image
-    integration: plv2-docker
+    integration: docker
     pointer:
       sourceName: "scriptnull/busybox"
     seed:
