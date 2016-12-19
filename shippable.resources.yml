@@ -18,6 +18,11 @@ resources:
         - "varsha@shippable.com"
         - "shiptest.rc.me@gmail.com"
         
+  - name: version-rs
+    type: version
+    seed:
+      versionName: "1.2.123-alpha"
+        
 #IMAGES
         
   - name: img1-rs
