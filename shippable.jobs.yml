@@ -1,0 +1,45 @@
+  - name: inrunsh
+    type: runSh
+    steps:
+      - IN: sample-script-rs
+       # versionName: testsha
+      - IN: rs-tg2
+      - TASK:
+        - script: ls
+        - script: ./IN/sample-script-rs/gitRepo/echo.sh
+    on_success:
+      - NOTIFY: slack-rs
+      - NOTIFY: email-rs
+      - script: echo 'infra test'
+      - script: echo 'newtesting success'
+    on_failure:
+      - script: echo 'testing1 failure'
+      - script: echo 'failure runSh'
+      - NOTIFY: slack-rs
+      
+  #- name: inrunsh2
+   # type: runSh
+ #   steps:
+     # - IN: sample-script-rs
+       # versionName: testsha
+      #- IN: inrunsh
+     # - IN: rs-tg2
+     # - TASK:
+     #   - script: ls
+      #  - script: ./IN/sample-script-rs/gitRepo/echo.sh
+      #
+# - name: outrunsh
+  #  type: runSh
+ #   steps:
+  #    - TASK:
+     #   - script: "mkdir -p /build/state/" # creating directory 
+       # - script: "touch /build/state/img1-rs.env" # touch will create new empty file with timestamp
+       # - script: "echo 'Hello'"
+    #   # - script: "echo 'versionName=latest' >>  /build/state/rs-img1.env" # this will be adding in the file mongo-image.env
+      #  #- script: "echo 'anotherProperty=foo' >>  /build/state/rs-img1.env" # next line will be this in the file mongo-image.env
+     # - OUT: img1-rs
+      #- IN: rs-tg3
+     # - IN: "2img-rs"
+     # - IN: "redis-rs"
+    #  - OUT: "env-rs"
+    #- NOTIFY: rs-slack
