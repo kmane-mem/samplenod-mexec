@@ -1,0 +1,15 @@
+triggers:
+   - name: rs-tg1
+     type: trigger
+     version:
+       counter: 2
+       
+   - name: rs-tg2
+     type: trigger
+     version:
+       counter: 2
+       
+   - name: rs-tg3
+     type: trigger
+     version:
+       counter: 4
