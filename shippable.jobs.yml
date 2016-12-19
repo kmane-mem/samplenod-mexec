@@ -27,7 +27,7 @@ jobs:
       - IN: sample-script-rs
         versionName: testsha
       - IN: inrunsh
-      - IN: rs-tg2
+      #- IN: rs-tg2
       - TASK:
         - script: sl
         - script: ./IN/sample-script-rs/gitRepo/echo.sh
