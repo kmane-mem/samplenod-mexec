@@ -25,7 +25,7 @@ jobs:
     type: release
     steps:
       - IN: version-rs
-      - IN: img1-rs
+      #- IN: img1-rs
      # - IN: inrunsh
       - TASK: managed
         bump: alpha
