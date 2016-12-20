@@ -25,7 +25,8 @@ jobs:
     type: release
     steps:
       - IN: version-rs
-      - IN: inrunsh
+      - IN: img1-rs
+     # - IN: inrunsh
       - TASK: managed
         bump: alpha
       #- IN: notify-man1cnrimg
@@ -42,18 +43,18 @@ jobs:
     #    - script: ls
       #  - script: ./IN/sample-script-rs/gitRepo/echo.sh
       
-  - name: outrunsh
-    type: runSh
-    steps:
-      - TASK:
-        - script: "mkdir -p /build/state/" # creating directory 
-        - script: "touch /build/state/img1-rs.env" # touch will create new empty file with timestamp
-        - script: "echo 'Hello'"
-        - script: "echo 'versionName=latest' >>  /build/state/rs-img1.env" # this will be adding in the file mongo-image.env
-        - script: "echo 'anotherProperty=foo' >>  /build/state/rs-img1.env" # next line will be this in the file mongo-image.env
-      - OUT: img1-rs
-      - IN: rs-tg3
-      - IN: "2img-rs"
-      - IN: "redis-rs"
+ # - name: outrunsh
+  #  type: runSh
+  #  steps:
+   #   - TASK:
+   ##     - script: "mkdir -p /build/state/" # creating directory 
+    #    - script: "touch /build/state/img1-rs.env" # touch will create new empty file with timestamp
+    #    - script: "echo 'Hello'"
+    #    - script: "echo 'versionName=latest' >>  /build/state/rs-img1.env" # this will be adding in the file mongo-image.env
+    #    - script: "echo 'anotherProperty=foo' >>  /build/state/rs-img1.env" # next line will be this in the file mongo-image.env
+#- OUT: img1-rs
+  #    - IN: rs-tg3
+ #     - IN: "2img-rs"
+  #    - IN: "redis-rs"
     #  - OUT: "env-rs"
       #- NOTIFY: rs-slack
