@@ -7,9 +7,10 @@ node_js:
   #- 0.11
 
 env: 
-  - QA=rc
-  - DEV=alpha
-  - secure: J8E+E5IIMxgJ0QaK5WYxZf4JvmgKDAUXfCZ82LtBZlodz3p4q/uoi14vQ8e/WLJbR/k/txUhMKZutCYCFMpbLi4tIoC+YUElqNAMXV5djPfCiUe6BFYdI0D+7mGblUx6U0/mWn89++3cM59gzYxchT/BAzuvpslfoZUfvutq5XfNs8OX3lzaw/Z+8eN56DNevzEOKz1jVKCzi0xkz35k0WvgGKiTuj2b7XiAMv0cdrrAKBgX5IVPfa/UeprjhqIk9gFwpfa07k3cS+aOXY09sBl+f9W2X5v0dm9LN7MxZJL/7MHT21jnu43fCp6o48mOshla4NWi9jlVvte8gyzxyw==
+  global:
+    - QA=rc
+    #- DEV=alpha
+    - secure: J8E+E5IIMxgJ0QaK5WYxZf4JvmgKDAUXfCZ82LtBZlodz3p4q/uoi14vQ8e/WLJbR/k/txUhMKZutCYCFMpbLi4tIoC+YUElqNAMXV5djPfCiUe6BFYdI0D+7mGblUx6U0/mWn89++3cM59gzYxchT/BAzuvpslfoZUfvutq5XfNs8OX3lzaw/Z+8eN56DNevzEOKz1jVKCzi0xkz35k0WvgGKiTuj2b7XiAMv0cdrrAKBgX5IVPfa/UeprjhqIk9gFwpfa07k3cS+aOXY09sBl+f9W2X5v0dm9LN7MxZJL/7MHT21jnu43fCp6o48mOshla4NWi9jlVvte8gyzxyw==
   
 build:
   pre_ci_boot:
@@ -25,10 +26,10 @@ build:
     - npm install
     #- sleep 10m
     - echo $QA
-    - echo $DEV
+   # - echo $DEV
     - echo $XMAS
     - echo $FOO
-    - echo $FOO2
+   # - echo $FOO2
     - echo $test
 
   post_ci:
