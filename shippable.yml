@@ -24,12 +24,12 @@ build:
   ci:
     - npm install
     #- sleep 10m
-    - echo "$QA"
-    - echo "$DEV"
-    - echo "$XMAS"
-    - echo "$FOO"
-    - echo "$FOO2"
-    - echo "$test"
+    - echo $QA
+    - echo $DEV
+    - echo $XMAS
+    - echo $FOO
+    - echo $FOO2
+    - echo $test
 
   post_ci:
     - ls -a
