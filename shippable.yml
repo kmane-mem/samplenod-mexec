@@ -9,9 +9,11 @@ node_js:
 env: 
   global:
     - QA=rc
-    #- DEV=alpha
     - secure: J8E+E5IIMxgJ0QaK5WYxZf4JvmgKDAUXfCZ82LtBZlodz3p4q/uoi14vQ8e/WLJbR/k/txUhMKZutCYCFMpbLi4tIoC+YUElqNAMXV5djPfCiUe6BFYdI0D+7mGblUx6U0/mWn89++3cM59gzYxchT/BAzuvpslfoZUfvutq5XfNs8OX3lzaw/Z+8eN56DNevzEOKz1jVKCzi0xkz35k0WvgGKiTuj2b7XiAMv0cdrrAKBgX5IVPfa/UeprjhqIk9gFwpfa07k3cS+aOXY09sBl+f9W2X5v0dm9LN7MxZJL/7MHT21jnu43fCp6o48mOshla4NWi9jlVvte8gyzxyw==
-  
+  matrix: 
+    - DEV=alpha
+    - secure: URfzjds9uocvtqsRXVeJcIud/CpKum52yGAhonIqXDTWoJaVIgSkIs4RcOmqMWleD30E1HEfOiyLYTlerhvTQ8nCpu4E8o/pbR2sa6eX/vehpYySKwEHdpUHQNeP9fhUCUZC6ZTT+s78gp2DQGaC9j2NCmdOi68UU5piq8h/ynQkfPNwCt9zjaEejEOSw4U1n1C0eN3MDUvsLnnjPoy3CelYOATrk+vF0JA08me2VlJV5h7ysw+OP2vQSu1OYwRFFZLCNMiTlrVjcSCzeFiedbhiVHcWqG8yx1v6iPmVTLM3iR63ZfmFs8fds+92yQmd5IoQAAXwwuMdoQozWJJIlA==
+
 build:
   pre_ci_boot:
     image_name: drydock/u14nod
@@ -26,10 +28,10 @@ build:
     - npm install
     #- sleep 10m
     - echo $QA
-   # - echo $DEV
+    - echo $DEV
     - echo $XMAS
     - echo $FOO
-   # - echo $FOO2
+    - echo $FOO2
     - echo $test
 
   post_ci:
