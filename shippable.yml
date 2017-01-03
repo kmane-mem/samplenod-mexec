@@ -17,16 +17,16 @@ env:
    # - M1=ONE
 
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/cock1_nod_secenv_preci .
-    - echo $TEST
-    - echo $DEV
-    - echo $TODAY
+  #pre_ci:
+   # - docker build -t=shippabledocker/cock1_nod_secenv_preci .
+   # - echo $TEST
+   # - echo $DEV
+   # - echo $TODAY
 
   pre_ci_boot:
     image_name: shippabledocker/cock1_nod_secenv_preci
     image_tag: latest
-    pull: false
+    pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
 
   ci:
@@ -34,7 +34,11 @@ build:
     - ls -al
 
   post_ci:
-    - docker push shippabledocker/cock1_nod_secenv_preci
+    - docker build -t=shippabledocker/cock1_nod_secenv_postci2 .
+    - docker push shippabledocker/cock1_nod_secenv_postci2
+    - echo $TEST
+    - echo $DEV
+    - echo $TODAY
     
 integrations:
   hub:
