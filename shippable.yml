@@ -3,12 +3,18 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  - 0.11
+ # - 0.11
+  - 5
 
 env:
-  - (*&$TEST=RC
+  - TEST=RC
   #- DEV=ALPHA
-  - secure: YWGz8Qv9ct7rHDl5lPS8klK7t2rpaWDhfNQ3Edj1Cn/l7e7XfGPCXHIU3RGcC9zvO24Vz7qZ+Hl8ptigVgRRGvV8NaJ8nqmlZeRgdnlJG3OMd30i+HydE4B7OKy5fscuMnTV5wXVjzUSIx6i7N/bGzvCDMk7YAI6B8Ygw3GZlWiKdDaT9RsCVukhskBlaDmMOjGhbmQmBfbplcz9Gw9m5z7EV+pmHRxFBelnjDCly3WLfw9+Mpa1GRQyoOXSHVUnGFk0cswUNtsrLHZM+El/gmEs70JMvtFc6Q2zpfHnR1XUYOuhM9l90zMMDFET5HTSln6Hw+IgL1TYwIPNb1q96A== 
+  - secure: b+ofRDnLuDwD0JmML4Wo37zuOJmmmD6r9zQvm9+dlsY8Br0F5H0Jyqyp33kDbIuUJGG9I/3dGRsiBM1nRUeKUp+ZWNHSDv9Ho5sEw+Lwhy9uh5tBkYNlWANwWOMqcFC7fM3lLTXRqQrrIqYTToOT2KpLGwJF2u49rqUtwf+/nGe93LXMr+Oc6YTCL4YXTrq1gH080wVDuJbSoKirqxoIfNOuLXy9r2wX1d4wlzGH5eiXioD/m+UT+QGW/fkofv7twiKygV/koDonS8GXohfCCwyBBJC3NR8ucXcNWD2lclfZKiA00zTjPB38mG6SWvv4qw82x+rk8ITTj+dgkcTeNw==
+  
+  global:
+    - FOO=FUBU
+    #- BOO=BUFU
+    - secure: YWGz8Qv9ct7rHDl5lPS8klK7t2rpaWDhfNQ3Edj1Cn/l7e7XfGPCXHIU3RGcC9zvO24Vz7qZ+Hl8ptigVgRRGvV8NaJ8nqmlZeRgdnlJG3OMd30i+HydE4B7OKy5fscuMnTV5wXVjzUSIx6i7N/bGzvCDMk7YAI6B8Ygw3GZlWiKdDaT9RsCVukhskBlaDmMOjGhbmQmBfbplcz9Gw9m5z7EV+pmHRxFBelnjDCly3WLfw9+Mpa1GRQyoOXSHVUnGFk0cswUNtsrLHZM+El/gmEs70JMvtFc6Q2zpfHnR1XUYOuhM9l90zMMDFET5HTSln6Hw+IgL1TYwIPNb1q96A== 
  
  # global:
  #   - FOO=FUBU
