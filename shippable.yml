@@ -7,49 +7,52 @@ node_js:
   - 5
 
 env:
-  - TEST=RC
-  #- DEV=ALPHA
-  - secure: b+ofRDnLuDwD0JmML4Wo37zuOJmmmD6r9zQvm9+dlsY8Br0F5H0Jyqyp33kDbIuUJGG9I/3dGRsiBM1nRUeKUp+ZWNHSDv9Ho5sEw+Lwhy9uh5tBkYNlWANwWOMqcFC7fM3lLTXRqQrrIqYTToOT2KpLGwJF2u49rqUtwf+/nGe93LXMr+Oc6YTCL4YXTrq1gH080wVDuJbSoKirqxoIfNOuLXy9r2wX1d4wlzGH5eiXioD/m+UT+QGW/fkofv7twiKygV/koDonS8GXohfCCwyBBJC3NR8ucXcNWD2lclfZKiA00zTjPB38mG6SWvv4qw82x+rk8ITTj+dgkcTeNw==
+  - TEST=RC DEV=ALPHA
+ # - secure: b+ofRDnLuDwD0JmML4Wo37zuOJmmmD6r9zQvm9+dlsY8Br0F5H0Jyqyp33kDbIuUJGG9I/3dGRsiBM1nRUeKUp+ZWNHSDv9Ho5sEw+Lwhy9uh5tBkYNlWANwWOMqcFC7fM3lLTXRqQrrIqYTToOT2KpLGwJF2u49rqUtwf+/nGe93LXMr+Oc6YTCL4YXTrq1gH080wVDuJbSoKirqxoIfNOuLXy9r2wX1d4wlzGH5eiXioD/m+UT+QGW/fkofv7twiKygV/koDonS8GXohfCCwyBBJC3NR8ucXcNWD2lclfZKiA00zTjPB38mG6SWvv4qw82x+rk8ITTj+dgkcTeNw==
   
-  global:
-    - FOO=FUBU
-    #- BOO=BUFU
-    - secure: YWGz8Qv9ct7rHDl5lPS8klK7t2rpaWDhfNQ3Edj1Cn/l7e7XfGPCXHIU3RGcC9zvO24Vz7qZ+Hl8ptigVgRRGvV8NaJ8nqmlZeRgdnlJG3OMd30i+HydE4B7OKy5fscuMnTV5wXVjzUSIx6i7N/bGzvCDMk7YAI6B8Ygw3GZlWiKdDaT9RsCVukhskBlaDmMOjGhbmQmBfbplcz9Gw9m5z7EV+pmHRxFBelnjDCly3WLfw9+Mpa1GRQyoOXSHVUnGFk0cswUNtsrLHZM+El/gmEs70JMvtFc6Q2zpfHnR1XUYOuhM9l90zMMDFET5HTSln6Hw+IgL1TYwIPNb1q96A== 
- 
- # global:
- #   - FOO=FUBU
-
   #matrix:
-   # - M1=ONE
+   # - FOO=FUBU
+    #- BOO=BUFU
+    #- secure: rP4WCDSSCopwEelJBLpG37nQdXHbeK4no9YTLLWNEIEqlxBn5dZEZ2zSHFK/9LQGulE918QvHCMUdi/mO0s7iuDBk205005B9Nu9oC2PBtrcs2ildBzLi1ZImk0I5E4kloGqjfgz4Lw5lo2pGzDVYKvMETt3ezdVopPJFHj9/DrmwOrijzrzmsINctS5I8W9DP/u8eg3PYrne2hp31wg0uDZ0sF1Rwydv+vYPjJ2zhdfylfF0WBnLBFimIYIThzjxFeF5grDxdZsuRHTUG1dAr3LNTii2FKitIx45MwFcW20E2yx00zdu9wRhrIEm36HM0TSBX+/E325TMdKjQ4jag==
+
+ # global:
+  #  - M1=ONE
+    #- M2=TWO
+   # - secure: GCFcd3G8MU/GbI6od5mVejTVjCSS2FlonE/Qcbz25KBENZc5bcY8cU75eIP/c43AY1VEAxgTnMqYZJsxcXFJSxe8bB0AWNjdqaPngP0ueigI8hAQJwibJrCxGEmpa8yokU7W2lh93zrqBU26/9Z8ejLUpNsLi/eHihh56B7o11CBDVkJmcyxOjrRmot8E9JySsCxYFVF8HCdJbqr3WIFN7OzCAx3FD0rYzdrJTbSxAKbu8B/gDRCD1rcYsPCJOkssKGnY1XD5hymPDdAZIuLdPZU7MaY/SJClM45B6G3Z9G/OQ6RHjHqh4gorukIkM0kwk0RZzFdjtUgItQLmSnD4w==
 
 build:
-  #pre_ci:
-   # - docker build -t=shippabledocker/cock1_nod_secenv_preci .
-   # - echo $TEST
-   # - echo $DEV
-   # - echo $TODAY
-
-  pre_ci_boot:
-    image_name: shippabledocker/cock1_nod_secenv_preci
-    image_tag: latest
-    pull: true
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
+  #cache: true
+ # pre_ci:
+  #  - docker build -t=shippabledocker/cock1_nod_vsecenv6 .
+  #  - echo $TEST
+  #  - echo $DEV
+    
+       
+ # pre_ci_boot:
+   # image_name: shippabledocker/cock1_nod_ivsecenv2 #drydock/u14nodpls # 
+   # image_tag: latest #prod #
+   # pull: true
+    #options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'    
+    
   ci:
     - ps -eax
     - ls -al
-
-  post_ci:
-    - docker build -t=shippabledocker/cock1_nod_secenv_postci2 .
-    - docker push shippabledocker/cock1_nod_secenv_postci2
+    - node --version   
     - echo $TEST
     - echo $DEV
-    - echo $TODAY
+
+  #post_ci:
+  #  - docker push shippabledocker/cock1_nod_vsecenv6   
+    #- echo $BOO
+    #- echo $FOO
+    #- echo $M1
+    #- echo $M2
+ #   - echo $TEST
+  #  - echo $DEV
+    
+  
     
 integrations:
   hub:
     - integrationName: docker
       type: docker
-     # branches:
-      #  only:
-        #  - master
